@@ -9,8 +9,8 @@ service / on new http:Listener(9090) {
     # + return - string name with hello message or error
     resource function get greeting(string name) returns string|error {
         // Send a response back to the caller.
-        if name is "" {
-            return error("name should not be empty!");
+        if name.length() > 5 {
+            return error("name is larger than expected!");
         }
         return "Hello," + name;
     }

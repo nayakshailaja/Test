@@ -12,7 +12,7 @@ service / on new http:Listener(9090) {
         if name.length() > 5 {
             return error("name is larger than expected!");
         }
-        return "Hello," + name;
+        return "Hello GM," + name;
     }
      resource function post .(@http:Payload string textMsg) returns string {
         return textMsg;
